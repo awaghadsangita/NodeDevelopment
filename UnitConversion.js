@@ -1,11 +1,27 @@
-let oneFeet=12;
-let oneInch=(1/12)
-let fortyTwoInch=42*oneInch
-console.log("42 Inch :"+fortyTwoInch+"Feet");
+let input=require("readline-sync");
+let givenLength=input.questionInt("Enter the Length");
+let givenUnit=input.question("Enter the Unit");
+let convertTo=input.question("in which unit you want to convert");
 
-let totalArea=60*40;
-let areaInMeters=totalArea/0.3
-console.log("60 feet *40 feet :"+areaInMeters+"meters");
+conversionUnit=givenUnit.toUpperCase()+"_TO_"+convertTo.toUpperCase();
 
-let twentyFivePlotsArea=25*areaInMeters*0.00024;
-console.log("25 plots of 60 feet*40 feet area :"+twentyFivePlotsArea+"acres");
+switch(conversionUnit){
+	case "FEET_TO_INCH":{
+		afterConversion=givenLength*0.0833333;
+		break;
+	}
+	case "INCH_TO_FEET":{
+		afterConversion=givenLength*12;
+		break;
+	}
+	case "FEET_TO_METER":{
+		afterConversion=givenLength*3.28084;
+		break;
+	}
+	case "METER_TO_FEET":{
+		afterConversion=givenLength*0.3048;
+	}
+	defualt:
+		console.log("Invalid conversion units");
+}
+
