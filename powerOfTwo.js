@@ -1,5 +1,4 @@
-let input=require("readline-sync");
-let  valueOfN=input.questionInt("Enter the value of n (2^n)");
+let  valueOfN=parseInt(process.argv[2]);
 power=1;
 for(let i=0;i<=valueOfN;i++){
 	console.log("2^"+i+"="+power);
