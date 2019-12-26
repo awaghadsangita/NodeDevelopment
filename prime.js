@@ -1,10 +1,18 @@
 let input =require("readline-sync");
-let number=input.questionInt("Enter the Number");
-isPrime=true;
-for(let i=2;i<parseInt(number/2);i++)
-{
-	if(number%i==0){
-		isPrime=false;
-		break;
+let range=input.questionInt("Enter the Number");
+itr=0;
+let numbers=new Array();
+for(let i=1;i<=range;i++){
+	isPrime=true;
+	for(let j=2;j<i;j++){
+		if(i%j==0){
+			isPrime=false;
+			break;
+		}
+	}	
+	if(isPrime==true){
+		numbers[itr++]=i;
 	}
 }
+
+
