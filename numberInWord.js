@@ -1,26 +1,50 @@
 let readLine=require("readline-sync");
 let number=readLine.questionInt("Enter the Single Digit Number");
+
 if(number<10){
-	if(number==0){
-		numberInWords="Zero";
-	}else if(number==1){
-		numberInWords="One";
-	}else if(number==2){
-		numberInWords="Two";
-	}else if(number==3){
-		numberInWords="Three";
-	}else if(number==4){
-		numberInWords="Four";
-	}else if(number==5){
-		numberInWords="Five";
-	}else if(number==6){
-		numberInWords="Six";
-	}else if(number==7){
-		numberInWords="Seven";
-	}else if(number==8){
-		numberInWords="Eight";
-	}else if(number==9){
-		numberInWords="Nine";
+	switch(number){
+		case 0:{
+			numberInWords="Zero";
+			break;
+		}
+		case 1:{
+			numberInWords="One";
+			break;
+		}
+		case 2:{
+			numberInWords="Two";
+			break;
+		}
+		case 3:{
+			numberInWords="Three";
+			break;
+		}
+		case 4:{
+			numberInWords="Four";
+			break;
+		}
+		case 5:{
+			numberInWords="Five";
+			break;
+		}
+		case 6:{
+			numberInWords="Six";
+			break;
+		}
+		case 7:{
+			numberInWords="Seven";
+			break;
+		}
+		case 8:{
+			numberInWords="Eight";
+			break;
+		}
+		case 9:{
+			numberInWords="Nine";
+			break;
+		}
+		default:
+		console.log("Invalid number range");
 	}
 }else{
 	console.log("Not single digit");
