@@ -9,7 +9,7 @@ for(let i=1;i<=6;i++)
 	dieRollResultDictionary.set(i,0);
 }
 
-for(let i=0;i!=null;i++){
+while(true){
 	die=Math.floor(Math.random()*10)%6+1;
 	dieRollResultDictionary.set(die,dieRollResultDictionary.get(die)+1);
 	for(let j=1;j<=6;j++)
