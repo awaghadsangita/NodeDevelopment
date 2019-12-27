@@ -1,40 +1,41 @@
 let die=Math.floor(Math.random()*10)%6+1;
-let dieRollResultDictionary={};
-let max;
+let dieRollResultDictionary=new Map();
+let max=0;
 let dieRolledMax;
 let dieRolledMin;
 
 for(let i=1;i<=6;i++)
 {
-	dieRollResultDictionary[i]=0;
+	dieRollResultDictionary.set(i,0);
 }
 
 for(let i=0;i!=null;i++){
 	die=Math.floor(Math.random()*10)%6+1;
-	dieRollResultDictionary[die]=dieRollResultDictionary[die]+1;
+	dieRollResultDictionary.set(die,dieRollResultDictionary.get(die)+1);
 	for(let j=1;j<=6;j++)
 	{
-		if(dieRollResultDictionary[j]>max)
+		if(dieRollResultDictionary.get(j)>max)
 		{
-			max=dieRollResultDictionary[j];
+			max=dieRollResultDictionary.get(j);
 		}
 	}
 	if(max>10)
 	break;
 }
 
-maximum=dieRollResultDictionary[1];
-minimum=dieRollResultDictionary[1];
+maximum=dieRollResultDictionary.get(1);
+minimum=dieRollResultDictionary.get(1);
 
 for(let i=1;i<=6;i++){
-	if(maximum<dieRollResultDictionary[i]){
-		maximum=dieRollResultDictionary[i];
+	if(maximum<dieRollResultDictionary.get(i)){
+		maximum=dieRollResultDictionary.get(i);
 		dieRolledMax=i;
 	}
-	if(minimum>dieRollResultDictionary[i]){
-		minimum=dieRollResultDictionary[i];
+	if(minimum>dieRollResultDictionary.get(i)){
+		minimum=dieRollResultDictionary.get(i);
 		dieRolledMin=i;
 	}
 }
 
-
+console.log("Max "+dieRolledMax+" "+maximum);
+console.log("Min "+dieRolledMin+" "+minimum);
