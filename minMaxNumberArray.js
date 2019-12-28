@@ -6,11 +6,15 @@ for(let i=0;i<10;i++){
 minimum=numberArray[0];
 maximum=numberArray[0];
 for(let i=0;i<10;i++){
-	if(maximum<numberArray[i])
-		maximum=numberArray[i];
-	if(minimum>numberArray[i])
-		minimum=numberArray[i];
+	for(let j=0;j<10-i;j++){
+		if(numberArray[j]>numberArray[j+1]){	
+			let temp=numberArray[j];
+			numberArray[j]=numberArray[j+1];
+			numberArray[j+1]=temp;
+		}
+	}
 }
-console.log("Minimum number : "+minimum);
-console.log("Maximum number : "+maximum);
+
+console.log("Minimum number : "+numberArray[0]);
+console.log("Maximum number : "+numberArray[numberArray.length-1]);
 
